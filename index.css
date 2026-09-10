@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +8,38 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #070707;
   color: #222;
 }
 
 .cabecalho {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #3d5485;
-  color: #fff;
+    width: 100%;
+    height: 200px; 
+    background-color: #b8b8b8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
+
+.logo {
+    width: 250px; 
+    height: auto;
+    display: block;
+}
+
 
 .cabecalho h1 {
   font-size: 5rem;
   margin-bottom: 8px;
 }
 
-  
+.cabecalho p {
+  font-size: 1rem;
+}
+
 
 #secao {
   padding: 40px 20px;
@@ -31,43 +47,114 @@ body {
   margin: 0 auto;
 }
 
-#secao h2 {
+#secao  h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   text-align: center;
+  color: white;
 }
+
 
 .grade {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
+  width: 100%;
 }
 
-.quadrado img {
-  height: 25vh;
+
+.quadrado {
+  min-width: 0;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.imagem-skin {
+  width: 100%;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #fff;
+  padding: 10px;
+  overflow: hidden;
   border-radius: 8px;
   background: linear-gradient(135deg, #ff4655, #1a1a2e);
-  flex-direction: column;
-  gap: 6px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
+
+.imagem-skin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.quadrado h2 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #f9faf8;
+}
+
 
 .quadrado:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
 }
 
-.secao-1 .quadrado {
-  background-color: red;
+.quadrado:hover .imagem-skin {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
 
-.secao-2 .quadrado {
-  background-color: green;
+/* Cores das seções */
+.secao-1 .imagem-skin {
+  background: linear-gradient(135deg, #ff4655, #1a1a2e);
+}
+
+.secao-2 .imagem-skin {
+  background: linear-gradient(135deg, #3d5485, #1a1a2e);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+  #secao {
+    max-width: 100%;
+  }
+
+  .grade {
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .imagem-skin {
+    height: 160px;
+  }
+
+  .cabecalho h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+
+
+.lendario{
+background: linear-gradient(90deg, #FFD700, #FF8C00);
+}
+
+
+.mitica{
+background: linear-gradient(90deg, #d4002a, #9B0000);
+}
+
+.comum{
+background-color: linear-gradient(90deg, #E5E7EB, #9CA3AF);
+}
+
+.raro{
+background: linear-gradient(90deg, #38BDF8, #2563EB);
 }
