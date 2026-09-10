@@ -39,11 +39,11 @@ body {
 
 .grade {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
 }
 
-.quadrado {
+.quadrado img {
   height: 25vh;
   display: flex;
   align-items: center;
